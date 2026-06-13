@@ -1,0 +1,271 @@
+<nav class="navbar" [class.open]="menuOpen">
+  <div class="nav-inner">
+    <a href="#home" class="brand" aria-label="M K C S & Co. home" (click)="closeMenu()">
+      <span class="brand-mark"><b>MKCS</b><small>& Co.</small></span>
+      <span class="brand-copy"><strong>M K C S <em>& Co.</em></strong><small>Chartered Accountants</small></span>
+    </a>
+
+    <button class="menu-button" type="button" aria-label="Toggle menu" (click)="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-panel">
+      <a *ngFor="let item of navItems" [href]="'#' + item.anchor" (click)="closeMenu()">{{ item.label }}</a>
+      <a href="#contact" class="nav-cta" (click)="closeMenu()">Get in Touch</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero" id="home">
+    <div class="grid-noise"></div>
+    <div class="container hero-layout">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Chartered Accountants · Established 2007</p>
+        <h1>Advisory Where<br><em>India Meets</em><br>Europe</h1>
+        <p class="hero-lead">M K C S & Co., Chartered Accountants is a cross-border advisory and assurance firm with offices in Nagpur, India and Luxembourg, EU — delivering rigorous tax, audit, and corporate advisory to businesses that operate across jurisdictions.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-gold">Our Practice Areas</a>
+          <a href="#contact" class="btn btn-ghost">Schedule a Consultation</a>
+        </div>
+      </div>
+
+      <aside class="hero-stats reveal delay" aria-label="Firm highlights">
+        <div class="metric-grid">
+          <article><strong>18+</strong><span>Years of Practice</span></article>
+          <article><strong>2</strong><span>Jurisdictions: India &amp; EU</span></article>
+          <article><strong>3</strong><span>Qualified Partners</span></article>
+          <article><strong>500+</strong><span>Clients Served</span></article>
+        </div>
+        <div class="market-map">
+          <div><strong>Nagpur</strong><small>India · Head Office</small></div>
+          <span><i></i>↔<i></i></span>
+          <div><strong>Luxembourg</strong><small>European Union · Partner Office</small></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="trust-strip" aria-label="Professional credentials">
+    <div class="trust-track"><span *ngFor="let item of trustStrip">{{ item }}</span><span *ngFor="let item of trustStrip">{{ item }}</span></div>
+  </section>
+
+  <section class="section intro" id="about">
+    <div class="container split">
+      <div>
+        <p class="eyebrow dark">Why MKCS</p>
+        <h2>Built for serious compliance, strategic tax work and cross-border growth.</h2>
+      </div>
+      <div>
+        <p class="lead dark-text">Founded in 2007 as Minhaj Khan & Co., the firm has developed into a multi-partner advisory practice with a rare India–EU corridor. The design of this website now reflects that premium positioning.</p>
+        <div class="differentiator-grid">
+          <article *ngFor="let item of differentiators"><span>✓</span><strong>{{ item[0] }}</strong><p>{{ item[1] }}</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow dark">Practice Areas</p>
+        <h2>One firm. Multiple specialist desks.</h2>
+        <p>Clear service cards, sharp copy and modern interaction make the firm look more premium and easier to understand.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card" *ngFor="let service of services">
+          <div class="service-top"><span class="service-icon">{{ service.icon }}</span><small>{{ service.accent }}</small></div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <div class="tags"><span *ngFor="let tag of service.tags">{{ tag }}</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section corridor-section">
+    <div class="container corridor-layout">
+      <div>
+        <p class="eyebrow">India–EU Corridor</p>
+        <h2>Positioned where Indian ambition meets European regulation.</h2>
+        <p class="lead">The Luxembourg office gives European businesses an India-ready advisory channel and gives Indian businesses an EU-side professional presence for structuring, compliance and reporting.</p>
+      </div>
+      <div class="corridor-panel">
+        <div class="flag-card"><b>🇮🇳 India</b><small>Nagpur Head Office</small></div>
+        <div class="connector"><i></i><span>Advisory Corridor</span><i></i></div>
+        <div class="flag-card"><b>🇪🇺 Europe</b><small>Luxembourg Partner Office</small></div>
+        <div class="corridor-tags"><span *ngFor="let item of corridor">{{ item }}</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section team" id="team">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow dark">Leadership</p>
+        <h2>Partner-led advisory with depth and credibility.</h2>
+      </div>
+      <div class="partner-grid">
+        <article class="partner-card" *ngFor="let partner of partners">
+          <header><span>{{ partner.initials }}</span><small>{{ partner.location }}</small></header>
+          <section>
+            <p class="role">{{ partner.role }}</p>
+            <h3>{{ partner.name }}</h3>
+            <p>{{ partner.bio }}</p>
+            <div class="creds"><span *ngFor="let cred of partner.creds">{{ cred }}</span></div>
+            <a [href]="partner.link" target="_blank" rel="noopener">{{ partner.linkText }} →</a>
+          </section>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow">How We Work</p>
+        <h2>Structured, documented and partner-reviewed.</h2>
+      </div>
+      <div class="process-grid">
+        <article *ngFor="let step of process"><span>{{ step.step }}</span><h3>{{ step.title }}</h3><p>{{ step.description }}</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section insights" id="insights">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow dark">Thought Leadership</p>
+        <h2>Professional insight, not generic content.</h2>
+        <p>Publications and partner commentary help build trust before a client sends the first enquiry.</p>
+      </div>
+      <div class="insight-grid">
+        <article class="insight-card" *ngFor="let insight of insights" [class.featured]="insight.featured">
+          <span class="badge" *ngIf="insight.badge">{{ insight.badge }}</span>
+          <small>{{ insight.type }}</small>
+          <h3>{{ insight.title }}</h3>
+          <p>{{ insight.excerpt }}</p>
+          <footer><span>{{ insight.author }} · {{ insight.meta }}</span><a [href]="insight.link" target="_blank" rel="noopener">{{ insight.linkText }}</a></footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container contact-layout">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Start with a confidential consultation.</h2>
+        <p class="lead">Tell the team what you need help with. This demo form shows confirmation in the browser; connect it to an email/API service for production.</p>
+        <div class="contact-list">
+          <div><span>📍</span><p><small>Head Office</small>Nagpur, Maharashtra, India</p></div>
+          <div><span>🌐</span><p><small>EU Partner Office</small>Luxembourg, European Union</p></div>
+          <div><span>✉️</span><p><small>Email</small>info&#64;mkc-ca.in</p></div>
+          <div><span>🧾</span><p><small>NRI Advisory</small>nrifinancetax.com</p></div>
+        </div>
+      </div>
+        <form class="contact-form" #form="ngForm" (ngSubmit)="submitEnquiry()">
+            <h3>Send an enquiry</h3>
+
+            <div class="field-row">
+                <label>
+                    First Name
+                    <input
+                            name="firstName"
+                            type="text"
+                            [(ngModel)]="enquiry.firstName"
+                            required
+                            placeholder="Your first name"
+                    />
+                </label>
+
+                <label>
+                    Last Name
+                    <input
+                            name="lastName"
+                            type="text"
+                            [(ngModel)]="enquiry.lastName"
+                            placeholder="Your last name"
+                    />
+                </label>
+            </div>
+
+            <label>
+                Email
+                <input
+                        type="email"
+                        name="email"
+                        [(ngModel)]="enquiry.email"
+                        required
+                        email
+                        placeholder="you@company.com"
+                />
+            </label>
+
+            <label>
+                Service Area
+                <select
+                        name="service"
+                        [(ngModel)]="enquiry.service"
+                        required
+                >
+                    <option value="" disabled>Select a practice area</option>
+                    <option *ngFor="let service of serviceOptions" [value]="service">
+                        {{ service }}
+                    </option>
+                </select>
+            </label>
+
+            <label>
+                Message
+                <textarea
+                        name="message"
+                        [(ngModel)]="enquiry.message"
+                        required
+                        rows="5"
+                        placeholder="Briefly describe your matter..."
+                ></textarea>
+            </label>
+
+            <button
+                    class="btn btn-gold"
+                    type="submit"
+                    [disabled]="form.invalid || formSending"
+            >
+                {{ formSending ? 'Sending...' : 'Submit Enquiry →' }}
+            </button>
+        </form>
+    </div>
+  </section>
+</main>
+
+<div class="success-modal-backdrop" *ngIf="showSuccessPopup">
+    <div class="success-modal">
+        <button class="success-modal-close" type="button" (click)="closeSuccessPopup()">
+            ×
+        </button>
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <p class="success-kicker">Message Sent</p>
+
+        <h3>Your enquiry has been sent successfully.</h3>
+
+        <p class="success-text">
+            Thank you for contacting M K C S &amp; Co. Our team will review your enquiry and get back to you shortly.
+        </p>
+
+        <button class="btn btn-gold success-modal-btn" type="button" (click)="closeSuccessPopup()">
+            Continue
+        </button>
+    </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div><strong>M K C S <span>& Co.</span></strong><small>Chartered Accountants</small><p>© {{ currentYear }} M K C S & Co., Chartered Accountants · Nagpur, India · Luxembourg, EU. Content is for informational purposes only and does not constitute professional advice.</p></div>
+    <nav><a *ngFor="let item of navItems" [href]="'#' + item.anchor">{{ item.label }}</a></nav>
+  </div>
+</footer>
