@@ -198,7 +198,7 @@ export class AppComponent {
             bio: 'Fellow member of ICAI with 18+ years of practice across income tax litigation, company law, international taxation and corporate advisory. Empanelled as an Independent Director under IICA and experienced in board-level governance.',
             creds: ['FCA — ICAI', 'IICA — Independent Director', 'Tax Litigation', 'Corporate Advisory'],
             linkText: 'LinkedIn Profile',
-            link: 'https://www.linkedin.com/in/minhaj-khan-19a30014/'
+            link: 'https://www.linkedin.com/in/ca-minhaj-majid-khan-0b71339/'
         },
         {
             initials: 'SS',
@@ -231,7 +231,7 @@ export class AppComponent {
             author: 'CA Minhaj Majid Khan',
             meta: 'June 2026',
             linkText: 'Download PDF ↗',
-            link: 'assets/lessons_learned_mkcs.pdf',
+            link: 'assets/lessons_learned.pdf',
             featured: true
         },
         {
